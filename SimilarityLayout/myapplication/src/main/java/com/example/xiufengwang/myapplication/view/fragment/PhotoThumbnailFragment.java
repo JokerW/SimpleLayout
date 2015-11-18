@@ -41,8 +41,14 @@ public class PhotoThumbnailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.thumbnail_fragment_layout, container, false);
-        initView();
+
         return view;
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        initView();
     }
 
     private void initView() {

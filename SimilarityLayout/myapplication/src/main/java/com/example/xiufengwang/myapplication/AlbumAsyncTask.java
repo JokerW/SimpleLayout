@@ -8,6 +8,7 @@ import android.provider.MediaStore;
 
 import com.example.xiufengwang.myapplication.moduel.PhotoInfoModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,7 +17,7 @@ import java.util.List;
 
 public class AlbumAsyncTask extends AsyncTask<Void, Void, Object> {
     private ContentResolver mCResolver;
-    private List<PhotoInfoModel> mListImageInfo;
+    private List<PhotoInfoModel> mListImageInfo = new ArrayList<PhotoInfoModel>();
     private AlbumListener mAlbumListener;
 
     public AlbumAsyncTask(Context context, AlbumListener listener) {

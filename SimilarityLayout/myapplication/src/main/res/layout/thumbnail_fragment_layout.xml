@@ -3,16 +3,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ScrollView
+        android:id="@+id/photo_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
     <com.example.xiufengwang.myapplication.view.widget.AutoHeightGridView
         android:id="@+id/thumbnail_grid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:numColumns="auto_fit"
+        android:numColumns="4"
         android:horizontalSpacing="@dimen/thumbnail_space"
+        android:verticalSpacing="@dimen/thumbnail_space"
         android:stretchMode="columnWidth"
         android:cacheColorHint="@color/transparent"
         android:listSelector="@color/transparent">
 
     </com.example.xiufengwang.myapplication.view.widget.AutoHeightGridView>
+
+    </ScrollView>
 
 </RelativeLayout>

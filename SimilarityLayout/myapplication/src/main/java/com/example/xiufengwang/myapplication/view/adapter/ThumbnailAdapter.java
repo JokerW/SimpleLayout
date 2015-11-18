@@ -1,6 +1,7 @@
 package com.example.xiufengwang.myapplication.view.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import com.example.xiufengwang.myapplication.R;
 import com.example.xiufengwang.myapplication.moduel.PhotoInfoModel;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
 
 import java.util.List;
 
@@ -26,7 +28,7 @@ public class ThumbnailAdapter extends BaseAdapter {
     public ThumbnailAdapter(Context context, List<PhotoInfoModel> list) {
         this.mContext = context;
         this.mPhotoList = list;
-        mOptions = new DisplayImageOptions.Builder().cacheInMemory(true).cacheOnDisk(true).showImageOnFail(R.mipmap.ic_launcher).considerExifParams(true).build();
+        mOptions = new DisplayImageOptions.Builder().cacheInMemory(true).cacheOnDisk(true).considerExifParams(true).bitmapConfig(Bitmap.Config.RGB_565).displayer(new SimpleBitmapDisplayer()).build();
     }
 
     @Override
@@ -61,7 +63,6 @@ public class ThumbnailAdapter extends BaseAdapter {
 //        viewHolder.mItem.setImageURI(Uri.parse(mPhotoList.get(position).getPath_absolute()));
         return convertView;
     }
-
 
 
     public class ViewHolder {

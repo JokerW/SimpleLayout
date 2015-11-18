@@ -8,4 +8,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <ImageView
+        android:id="@+id/choice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/thumbnail_img"
+        android:layout_alignRight="@+id/thumbnail_img"/>
+
 </com.example.xiufengwang.myapplication.view.widget.SquareLayout>

@@ -7,6 +7,13 @@
     android:background="@color/black">
 
     <FrameLayout
+        android:id="@+id/photo_type_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </FrameLayout>
+
+    <FrameLayout
         android:id="@+id/thumbnail_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">

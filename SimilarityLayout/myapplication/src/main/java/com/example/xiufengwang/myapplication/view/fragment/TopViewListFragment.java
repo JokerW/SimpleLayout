@@ -7,4 +7,10 @@ import android.app.Fragment;
  */
 public class TopViewListFragment extends Fragment {
 
+
+    public static TopViewListFragment getInstance() {
+        TopViewListFragment mTopFrament = new TopViewListFragment();
+        return mTopFrament;
+    }
+
 }

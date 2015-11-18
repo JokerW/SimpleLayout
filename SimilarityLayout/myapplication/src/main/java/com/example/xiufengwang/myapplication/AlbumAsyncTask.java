@@ -8,7 +8,6 @@ import android.provider.MediaStore;
 
 import com.example.xiufengwang.myapplication.moduel.PhotoInfoModel;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,7 +16,7 @@ import java.util.List;
 
 public class AlbumAsyncTask extends AsyncTask<Void, Void, Object> {
     private ContentResolver mCResolver;
-    private List<PhotoInfoModel> listImageInfo = new ArrayList<PhotoInfoModel>();
+    private List<PhotoInfoModel> mListImageInfo;
     private AlbumListener mAlbumListener;
 
     public AlbumAsyncTask(Context context, AlbumListener listener) {
@@ -33,7 +32,7 @@ public class AlbumAsyncTask extends AsyncTask<Void, Void, Object> {
     @Override
     protected void onPostExecute(Object o) {
         super.onPostExecute(o);
-        mAlbumListener.onLoadFinish(listImageInfo);
+        mAlbumListener.onLoadFinish(mListImageInfo);
     }
 
     @Override
@@ -45,7 +44,10 @@ public class AlbumAsyncTask extends AsyncTask<Void, Void, Object> {
         };
 
         Cursor cursor = mCResolver.query(MediaStore.Images.Thumbnails.EXTERNAL_CONTENT_URI, projection, null, null, null);
+//        int count = cursor.getColumnCount();
+//        mListImageInfo = new ArrayList<PhotoInfoModel>(count);
         PhotoInfoModel photoModel;
+
         if (cursor != null && cursor.moveToFirst()) {
             do {
                 int id = cursor.getColumnIndex(MediaStore.Images.Thumbnails._ID);
@@ -58,13 +60,17 @@ public class AlbumAsyncTask extends AsyncTask<Void, Void, Object> {
                 photoModel.setImg_id(photoId);
                 photoModel.setPath_absolute(path);
                 photoModel.setPath_file("file:/" + path);
-                listImageInfo.add(photoModel);
+                mListImageInfo.add(photoModel);
             } while (cursor.moveToNext());
         }
+
+        cursor.close();
         return null;
     }
 
     public interface AlbumListener {
         void onLoadFinish(List<PhotoInfoModel> list);
     }
+
+
 }

@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.xiufengwang.myapplication.R;
-import com.example.xiufengwang.myapplication.view.fragment.PhotoThumbnailFragment;
+import com.example.xiufengwang.myapplication.view.fragment.TopViewListFragment;
 import com.example.xiufengwang.myapplication.view.widget.PhotoInterface;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,7 +22,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         FragmentManager fm = getFragmentManager();
-        fm.beginTransaction().replace(R.id.thumbnail_layout, PhotoThumbnailFragment.getInstance()).commit();
+//        fm.beginTransaction().replace(R.id.thumbnail_layout, PhotoThumbnailFragment.getInstance()).commit();
+        fm.beginTransaction().replace(R.id.photo_type_layout, TopViewListFragment.getInstance()).commit();
+
     }
 
 

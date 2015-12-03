@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.xiufengwang.myapplication.AlbumAsyncTask;
+import com.example.xiufengwang.myapplication.utils.AlbumAsyncTask;
 import com.example.xiufengwang.myapplication.R;
 import com.example.xiufengwang.myapplication.moduel.PhotoInfoModel;
 import com.example.xiufengwang.myapplication.view.adapter.ThumbnailAdapter;

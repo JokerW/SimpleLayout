@@ -1,4 +1,4 @@
-package com.example.xiufengwang.myapplication;
+package com.example.xiufengwang.myapplication.utils;
 
 import android.content.ContentResolver;
 import android.content.Context;
